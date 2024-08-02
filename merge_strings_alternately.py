@@ -35,7 +35,7 @@ Constraints:
 1 <= word1.length, word2.length <= 100
 word1 and word2 consist of lowercase English letters."""
 
-def mergeAlternately(word1: str, word2: str) -> str:
+def mergeAlternately(word1: str, word2: str):
     i = 0
     j = 0
     res = []
