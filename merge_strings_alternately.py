@@ -55,6 +55,6 @@ def mergeAlternately(word1: str, word2: str) -> str:
     print (output)
     return output
 
-    mergeAlternately("abc", "pqr")
-    mergeAlternately("ab", "pqrs")
+mergeAlternately("abc", "pqr")
+mergeAlternately("ab", "pqrs")
 
