@@ -15,15 +15,25 @@
 # Output: [1,2]
 # Example 3:
 
-# Solution
+#  1. Brute Force Solution (Time O(n^2); space O(1))
 
-def solution(nums, target):
- 
-    n = len(nums)
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        for i in range(len(nums)):
+            for j in range(i+1, len(nums)):
+                if (nums[i] + nums[j] == target) and (i != j):
+                    return [i, j]
 
-    for i in range(n):
-        for j in range(i+1, n):
-            if nums[i] + nums[j] == target:
-                return ([i, j])
-# answer = solution([2,5,7,11], 4) 
-# print (answer)
+# 2. HashMap Solution (Time O(n); space O(n))
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        
+        hashMap = {} # value : index
+
+        for i, num in enumerate (nums):
+            diff = target - num
+            if diff in hashMap:
+                return [hashMap[diff], i]
+            hashMap[num] = i
+
