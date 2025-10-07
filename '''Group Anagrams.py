@@ -24,17 +24,3 @@ Constraints:
 1 <= strs.length <= 1000.
 0 <= strs[i].length <= 100
 strs[i] is made up of lowercase English letters. '''
-
-# 1. Solution (Time O(m * n log n); space O(m * n))
-
-class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        from collections import defaultdict
-        
-        hashTable = defaultdict(list)
-
-        for string in strs:
-            key = "".join(sorted(string))
-            hashTable[key].append(string)
-        
-        return list(hashTable.values())
