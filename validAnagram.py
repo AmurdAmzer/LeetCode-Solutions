@@ -38,18 +38,25 @@ class Solution:
         tCounter = Counter(t)
         return sCounter == tCounter
 
-# 3. HashMap Solution (Time O(n); space O(1) since the character set is fixed)
+# 3. Array Solution (Time O(n); space O(1) since the character set is fixed)
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
+        
+
+        # step 1: check if the length of the two strings are the same, if yes, continue, if no, return false.
         if len(s) != len(t):
             return False
 
-        count = [0] * 26
-        for i in range(len(s)):
-            count[ord(s[i]) - ord('a')] += 1
-            count[ord(t[i]) - ord('a')] -= 1
+        # step 2: create an array of numbers (0s) to collect the frequencies/counts of each character in both strings
+        array = [0] * 26
 
-        for val in count:
+        # step 3: check for the characters in the strings and add for s and subtract for t
+        for i in range(len(s)):
+            array[ord(s[i]) - ord('a')] += 1
+            array[ord(t[i]) - ord('a')] -= 1
+
+        # step 4: check to see if the values in the array are all 0s, if they are 0s, anagram, return true, else, return false
+        for val in array:
             if val != 0:
                 return False
         return True
