@@ -25,7 +25,7 @@ Constraints:
 0 <= strs[i].length <= 100
 strs[i] is made up of lowercase English letters. '''
 
-# Solution 1: using sorting Time O(n * k log k); space O(n).....
+# Solution 1: using sorting Time O(n * k log k); space O(n)....
 # step 1: create a diffult dictionary and assign it to groups (groups of words), where the key is the sorted word/string and the value is the list of words that are the same or anagrams
          from collections import defaultdict
 
